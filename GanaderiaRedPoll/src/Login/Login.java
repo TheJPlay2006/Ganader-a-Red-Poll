@@ -35,8 +35,8 @@ public class Login extends javax.swing.JFrame {
     
     public void Botontranparente (){
     btnMostrar.setOpaque(false);
-        btnMostrar.setContentAreaFilled(false);
-        btnMostrar.setBorderPainted(false);    
+    btnMostrar.setContentAreaFilled(false);
+    btnMostrar.setBorderPainted(false);    
     }
     
     //Metodos
@@ -214,10 +214,12 @@ public class Login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtponercontrasenaActionPerformed
     private void limpiarDatos() {
+    //Metodo para limpiar datos ingresados
     txtingresarcorreo.setText(""); 
     txtponercontrasena.setText(""); 
  
 }
+    //Funcionalidad de mostrar u ocultar el botón 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         if (isPasswordVisible) {
             txtponercontrasena.setEchoChar('*');
@@ -227,7 +229,7 @@ public class Login extends javax.swing.JFrame {
             isPasswordVisible = true;
         }
     }//GEN-LAST:event_btnMostrarActionPerformed
-
+    //Redirige a otra ventana 
     private void btnregistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistroActionPerformed
     Registro nuevo = new Registro(this); 
     nuevo.setVisible(true);
