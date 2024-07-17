@@ -25,6 +25,8 @@ public class EditarUsuario extends javax.swing.JFrame {
         this.listaUsuarios = new ArrayList<>();
         this.contadorID = 1;
     }
+     // Uso de instancia 
+    
      public static EditarUsuario getInstance() {
         if (instancia == null) {
             instancia = new EditarUsuario();
@@ -34,7 +36,7 @@ public class EditarUsuario extends javax.swing.JFrame {
 
     public void agregarUsuario(Usuario usuario) {
         listaUsuarios.add(usuario);
-        // Aquí podrías agregar lógica adicional, como guardar en una base de datos o archivo
+       
     }
 
     public int obtenerNuevoID() {

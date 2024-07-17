@@ -4,6 +4,7 @@
  */
 package Login;
 
+// Importar las librerias y demás 
 import Gestiones.FormularioPropietarios;
 import Gestiones.RedirigirAdmin;
 import Gestiones.RedirigirLechero;
@@ -17,8 +18,10 @@ import javax.swing.JOptionPane;
  * @author Jairo
  */
 
-public class Login extends javax.swing.JFrame {   
-private boolean isPasswordVisible = false;
+public class Login extends javax.swing.JFrame {  
+    
+    //Declara listas y variables
+    private boolean isPasswordVisible = false;
     private List<Usuario> listaUsuarios = new ArrayList<>();
     private int contadorID = 1;
     private Roles roles;
@@ -35,6 +38,8 @@ private boolean isPasswordVisible = false;
         btnMostrar.setContentAreaFilled(false);
         btnMostrar.setBorderPainted(false);    
     }
+    
+    //Metodos
     public boolean autenticar(String correo, String contrasena) {
         return roles.validarCredenciales(correo, contrasena);
 
@@ -232,12 +237,13 @@ private boolean isPasswordVisible = false;
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnsalirActionPerformed
-
+    //Botón que valida registro
     private void btniniciarsecionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btniniciarsecionActionPerformed
     String correo = txtingresarcorreo.getText().trim();
     String contrasena = new String(txtponercontrasena.getPassword()).trim();
     Roles roles = Roles.getInstance();
 
+    //Verifica que todo esté correcto 
     if (roles.validarCredenciales(correo, contrasena)) {
         Usuario usuario = roles.obtenerUsuario(correo);
         JOptionPane.showMessageDialog(this, "Bienvenido(a), " + usuario.getNombre(), "Inicio de sesión exitoso", JOptionPane.INFORMATION_MESSAGE);
